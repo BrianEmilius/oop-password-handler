@@ -12,7 +12,7 @@ require('password.php');
 ### Generate
 Generate a password
 
-Password::generate([PARAM INT])
+Password::generate([integer $length])
 ```
 $newPassword = Password::generate();
 ```
@@ -29,14 +29,14 @@ $newPassword = Password::generate(25); // this will generate a password 25 chara
 ### Hash
 Get the hash of a (for example) user defined password
 
-Password::hash(PARAM STR)
+Password::hash(string $password)
 ```
 $hash = Password::hash("somepassword");
 ```
 ### Verify
 Verify a password against a stored hash
 
-Password::verify(PARAM STR password, PARAM STR hash)
+Password::verify(string $password, string $hash)
 
 The method returns true or false.
 ```
