@@ -11,6 +11,7 @@ require('password.php');
 ```
 ### Generate
 Generate a password
+
 Password::generate([PARAM INT])
 ```
 $newPassword = Password::generate();
@@ -27,13 +28,16 @@ $newPassword = Password::generate(25); // this will generate a password 25 chara
 ```
 ### Hash
 Get the hash of a (for example) user defined password
+
 Password::hash(PARAM STR)
 ```
 $hash = Password::hash("somepassword");
 ```
 ### Verify
 Verify a password against a stored hash
+
 Password::verify(PARAM STR password, PARAM STR hash)
+
 The method returns true or false.
 ```
 if (Password::verify("1234", "$2y$09$P9F3cqb1c.nqf0UhwRf/wOkM.fT6QQINIBv8UAkrbghk/FdoPN2fi"):
@@ -42,4 +46,5 @@ endif;
 ```
 ### Options
 You can change the bcrypt cost in 'password.php' line 35.
+
 The value 10 is default. Higher is safer, lower is faster.
