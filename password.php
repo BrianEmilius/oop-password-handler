@@ -21,14 +21,14 @@ class Password {
         if (preg_match("/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{$random_string_length}/", $string)):
             $obj = new stdClass();
             $obj->clean = $string;
-            $obj->digested = self::encrypt($string);
+            $obj->digested = self::hash($string);
             return $obj;
         else:
             return self::generate($random_string_length);
         endif;
     }
     
-    public static function encrypt($password) {
+    public static function hash($password) {
         self::$password = $password;
         
         self::$options = array(
